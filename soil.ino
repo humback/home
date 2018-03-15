@@ -10,6 +10,7 @@ const char* server = "api.thingspeak.com";
 int analogPin = A0;     
 int val = 0;           // variable to store the value read
 
+const int sleepTimeS = 60;// Time to sleep (in seconds):
 
 
 WiFiClient client;
@@ -28,6 +29,7 @@ while (WiFi.status() != WL_CONNECTED) {
 }
 Serial.println("");
 Serial.println("WiFi connected");
+  
 
 }
 
@@ -59,5 +61,13 @@ client.stop();
 Serial.println("Waiting…");
 // thingspeak needs minimum 15 sec delay between updates
 delay(20000);
+  
+    
+  // Sleep
+//  Serial.println("ESP8266 in sleep mode");
+//  ESP.deepSleep(sleepTimeS * 1000000);  
+
+  
+  
 }
 
